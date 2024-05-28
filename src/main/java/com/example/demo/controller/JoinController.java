@@ -12,14 +12,16 @@ public class JoinController {
 
   private final JoinService joinService;
 
-  public JoinController(JoinService joinService)
-  {
-    this.joinService=joinService;
+  public JoinController(JoinService joinService) {
+
+    this.joinService = joinService;
   }
+
   @PostMapping("/join")
-  public String joinProcess(JoinDTO joinDTO){
-    System.out.println(joinDTO.getUsername());
+  public String joinProcess(JoinDTO joinDTO) {
+
     joinService.joinProcess(joinDTO);
-    return "OK!";
+
+    return "ok";
   }
 }
