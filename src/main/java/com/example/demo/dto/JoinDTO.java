@@ -1,12 +1,21 @@
 package com.example.demo.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import com.example.demo.entity.UserEntity;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
-@Setter
-@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class JoinDTO {
-
   private String username;
+  private String userEmail;
   private String password;
+
+  public UserEntity toEntity() {
+    return UserEntity.builder()
+        .username(this.username)
+        .useremail(this.userEmail)
+        .password(this.password)
+        .build();
+  }
 }
